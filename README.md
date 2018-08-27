@@ -4,6 +4,8 @@ celery (3.1.26.post2)
 django-celery (3.2.2)
 
 
+此应用是基于djcelery开发的一个简单的接口.主要是定时任务,不涉及周期性任务.
+
 应用 为 scheduled_tasks 
 
 启动celery:
