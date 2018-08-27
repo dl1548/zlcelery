@@ -15,9 +15,6 @@ urlpatterns = [
 
     url(r'^add_crontab_task/$', views.add_crontab_task),  # 新建定时任务
     url(r'^modify_crontab_task/$', views.modify_crontab_task),  # 修改定时任务
-
-
-   # url(r'^get_mod_crontab_data/$', views.get_mod_crontab_data),  # 获取需要修改的 crontab 定时时间 数据
 ]
 
 

@@ -13,15 +13,15 @@ export PYTHONOPTIMIZE=1 && celery -A zlcelery worker --autoreload -l info -B
 
 #### 获取所有定时任务
 
-url : scheduled_tasks/get_crontab_task/
+`url : scheduled_tasks/get_crontab_task/`
 
 #### 获取所有 定时任务时间 
 
-url : scheduled_tasks/get_crontab_time/
+`url : scheduled_tasks/get_crontab_time/`
 
 #### 获取定时任务模板
 
-url : scheduled_tasks/get_task_template/
+`url : scheduled_tasks/get_task_template/`
 
 #### 添加定时任务时间
 
@@ -29,7 +29,7 @@ url : scheduled_tasks/get_task_template/
 
 minute  hour  day_of_week  day_of_month  month_of_year
 
-url : scheduled_tasks/add_crontab/
+`url : scheduled_tasks/add_crontab/`
 
 #### 修改定时任务时间
 
@@ -39,7 +39,7 @@ id minute  hour  day_of_week  day_of_month  month_of_year
 经测试,修改时间不会动态生效.就是说,时间的修改对当前运行的任务不会即时生效.
 两种方法触发生效.1: 重启服务 2: 相关任务重新启动(建议)
 
-url : scheduled_tasks/modify_crontab_time/
+`url : scheduled_tasks/modify_crontab_time/`
 
 修改的同时,要查询所有的关联此crontab的任务,且任务是开启状态的.后重新更新下任务,才能触发任务的定时的更新.(后台已做好)
 
@@ -51,7 +51,7 @@ url : scheduled_tasks/modify_crontab_time/
 
 注意:时间删除,关联的任务也会全部删除!
 
-url : scheduled_tasks/delete_crontab/
+`url : scheduled_tasks/delete_crontab/`
 
 
 #### 新加定时任务
@@ -63,9 +63,7 @@ args : 参数,视情况而定(不同任务可能传参不同)
 enabled : 1 开启     0 关闭
 crontab_id :定时任务时间ID 
 
-utl : scheduled_tasks/add_crontab_task/
-
-http://192.168.1.70:8001/scheduled_tasks/add_crontab_task/?name=apitest&task=scheduled_tasks.tasks.get_date&args=["192.168.1.55","root","centos"]&enabled=0&crontab_id=5
+`url : scheduled_tasks/add_crontab_task/`
 
 
 #### 修改定时任务
@@ -80,4 +78,6 @@ task : 任务模板(通过模板url可取出)
 args : 参数,视情况而定(不同任务可能传参不同)
 enabled : 1 开启     0 关闭
 crontab_id :定时任务时间ID 
+
+`url : scheduled_tasks/modify_crontab_task/`
 
